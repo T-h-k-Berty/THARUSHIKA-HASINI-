@@ -127,7 +127,7 @@ export default function Home() {
       {/* --- HEADER --- */}
       <header
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 border-b border-transparent ${
-          scrolled ? "bg-sand/80 backdrop-blur-xl py-4 shadow-sm border-gold/10" : "bg-transparent py-6 md:py-8"
+          scrolled ? "bg-sand/95 backdrop-blur-xl py-4 shadow-sm border-gold/15" : "bg-transparent py-6 md:py-8"
         }`}
       >
         <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -164,9 +164,9 @@ export default function Home() {
             <span className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">↗</span>
           </a>
           
-          {/* Mobile Menu Toggle */}
+          {/* Mobile Menu Toggle Button */}
           <button 
-            className="md:hidden text-charcoal focus:outline-none relative z-50 p-2 -mr-2"
+            className="md:hidden text-charcoal focus:outline-none relative z-[100] p-2 -mr-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle Menu"
           >
@@ -177,27 +177,39 @@ export default function Home() {
             </div>
           </button>
         </div>
-
-        {/* Mobile Navigation Fullscreen Menu */}
-        <div className={`fixed inset-0 bg-sand z-40 flex flex-col items-center justify-center transition-all duration-500 md:hidden ${mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-            <nav className="flex flex-col items-center gap-8">
-                {["Work", "Services", "About", "Contact"].map((item, i) => (
-                    <a
-                        key={item}
-                        href={`#${item.toLowerCase()}`}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="text-4xl font-serif text-charcoal hover:text-gold transition-colors italic"
-                        style={{ transitionDelay: `${i * 100}ms` }}
-                    >
-                        {item}
-                    </a>
-                ))}
-            </nav>
-            <div className="absolute bottom-12 text-[10px] uppercase tracking-widest text-gray-400">
-               Independent Web Design &copy; 2026
-            </div>
-        </div>
       </header>
+
+      {/* Mobile Navigation Fullscreen Overlay Menu - Clicking background closes the menu, and added a close button */}
+      <div 
+        onClick={() => setMobileMenuOpen(false)}
+        className={`fixed inset-0 bg-sand/98 backdrop-blur-md z-[90] flex flex-col items-center justify-center transition-all duration-500 md:hidden ${mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+      >
+          {/* Close Icon Button */}
+          <button 
+            onClick={() => setMobileMenuOpen(false)}
+            className="absolute top-6 right-6 w-12 h-12 rounded-full border border-charcoal/20 flex items-center justify-center text-charcoal hover:bg-charcoal hover:text-sand transition-colors duration-300"
+            aria-label="Close Menu"
+          >
+            <span className="text-xl font-light">✕</span>
+          </button>
+
+          <nav className="flex flex-col items-center gap-8" onClick={(e) => e.stopPropagation()}>
+              {["Work", "Services", "About", "Contact"].map((item, i) => (
+                  <a
+                      key={item}
+                      href={`#${item.toLowerCase()}`}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="text-4xl font-serif text-charcoal hover:text-gold transition-colors italic"
+                      style={{ transitionDelay: `${i * 100}ms` }}
+                  >
+                      {item}
+                  </a>
+              ))}
+          </nav>
+          <div className="absolute bottom-12 text-[10px] uppercase tracking-widest text-gray-400">
+             Independent Web Design &copy; 2026
+          </div>
+      </div>
 
       {/* --- HERO SECTION --- */}
       <section className="pt-32 pb-16 md:pt-48 md:pb-32 lg:pt-56 lg:pb-40 container mx-auto px-6 md:px-12">
