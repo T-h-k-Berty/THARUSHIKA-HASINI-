@@ -250,14 +250,13 @@ export default function Home() {
             </motion.div>
           </motion.div>
 
-          {/* Hero Image / Featured Work (Updated for Premium Full View) */}
+          {/* Hero Image / Featured Work */}
           <motion.div
             initial="hidden"
             animate="visible"
             variants={revealImage}
             className="xl:col-span-7 relative w-full group mt-10 xl:mt-0"
           >
-            {/* Elegant container without the ugly gray padding */}
             <div className="relative w-full shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-xl overflow-hidden border border-charcoal/5">
                 <img
                   src={projects[1].image}
@@ -265,10 +264,8 @@ export default function Home() {
                   className="w-full h-auto object-cover transition-transform duration-[2s] ease-[0.25,0.1,0.25,1] group-hover:scale-[1.03]"
                 />
                 
-                {/* Advanced Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/20 to-transparent opacity-80 group-hover:opacity-70 transition-opacity duration-700 pointer-events-none"></div>
                 
-                {/* Content over image */}
                 <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 text-sand z-10">
                   <div className="flex items-center gap-3 mb-2 md:mb-3">
                      <span className="w-4 h-[1px] bg-gold"></span>
@@ -281,7 +278,6 @@ export default function Home() {
                   </h2>
                 </div>
                 
-                {/* Link Button */}
                 <a href={projects[1].url} target="_blank" rel="noreferrer" className="absolute bottom-6 right-6 md:bottom-10 md:right-10 w-12 h-12 md:w-16 md:h-16 rounded-full border border-sand/40 flex items-center justify-center text-sand hover:bg-gold hover:border-gold hover:text-charcoal transition-all duration-500 z-10 backdrop-blur-md group/btn shadow-lg">
                     <span className="transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform duration-300 text-sm">↗</span>
                 </a>
@@ -337,7 +333,6 @@ export default function Home() {
               variants={fadeInUp}
               className={`group flex flex-col ${index === 0 ? "md:col-span-2" : ""}`}
             >
-              {/* Updated Work Images for Full View */}
               <a href={project.url} target="_blank" rel="noreferrer" className="block relative mb-8 md:mb-10">
                 <div className="relative w-full rounded-xl overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.1)] border border-charcoal/5">
                    <img
@@ -353,7 +348,7 @@ export default function Home() {
                     {project.number}
                   </div>
                   
-                   <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 text-[8px] md:text-[10px] font-bold tracking-[0.2em] text-sand bg-charcoal/95 px-4 py-2 rounded-sm backdrop-blur-md shadow-md">
+                   <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 text-[8px] md:text-[10px] font-bold tracking-[0.25em] text-sand bg-charcoal/95 px-4 py-2 rounded-sm backdrop-blur-md shadow-md">
                     {project.label}
                   </div>
                   
@@ -386,7 +381,6 @@ export default function Home() {
 
       {/* --- SERVICES SECTION (DARK) --- */}
       <section id="services" className="bg-charcoal text-sand py-24 md:py-40 relative overflow-hidden border-t border-gold/10">
-        {/* Luxury Background Glow */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] md:w-[1000px] md:h-[1000px] bg-gold/5 rounded-full blur-[100px] md:blur-[150px] -translate-y-1/3 translate-x-1/3 pointer-events-none"></div>
 
         <div className="container mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 relative z-10">
@@ -440,7 +434,6 @@ export default function Home() {
       <section id="about" className="py-24 md:py-40 container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer} className="order-2 lg:order-1 flex justify-center lg:justify-start">
-               {/* Elegant Monogram */}
                <motion.div variants={fadeInUp} className="relative w-full max-w-[400px] aspect-square flex items-center justify-center bg-[#eae8e3] rounded-xl shadow-lg p-8">
                   <div className="absolute inset-4 border border-charcoal/10 rounded-lg"></div>
                   <span className="font-serif text-[120px] md:text-[180px] lg:text-[220px] leading-none text-charcoal/10 tracking-tighter select-none">
@@ -491,7 +484,6 @@ export default function Home() {
 
       {/* --- CONTACT / CTA SECTION --- */}
       <section id="contact" className="py-32 md:py-48 bg-charcoal text-sand relative overflow-hidden flex flex-col items-center justify-center text-center">
-         {/* Luxury Decorative Rings */}
          <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-30">
             <div className="w-[300px] h-[300px] md:w-[700px] md:h-[700px] rounded-full border-[1px] border-gold/40"></div>
             <div className="absolute w-[450px] h-[450px] md:w-[1000px] md:h-[1000px] rounded-full border-[1px] border-gold/10"></div>
@@ -534,7 +526,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center gap-2 md:gap-8 text-center md:text-left">
               <p>Independent Portfolio Concept</p>
               <span className="hidden md:block w-1 h-1 bg-gray-700 rounded-full"></span>
-              <p>&copy; {new Date().getFullYear()} All Rights Reserved</p>
+              <p>&copy; 2026 All Rights Reserved</p>
           </div>
           
           <a href="#top" className="hover:text-gold transition-colors flex items-center gap-2 group">
